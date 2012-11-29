@@ -1,5 +1,7 @@
 {% extends "if_website/base.html" %}
 
+{% load humanize %}
+
 {% block content %}
 <div class="row">
   
@@ -26,10 +28,10 @@
           <td><h4>Personen</h4></td><td style="color:#900;text-align:right;"><h4>{{ anz_personen }}</h4></td>
         </tr>
         <tr>
-          <td><h4>Ausgabenverzicht/Monat</h4></td><td style="color:#900;text-align:right;"><h4>{{ ausgaben_monat }} €</h4></td>
+          <td><h4>Ausgabenverzicht/Monat</h4></td><td style="color:#900;text-align:right;"><h4>{{ ausgaben_monat|intcomma }} €</h4></td>
         </tr>
         <tr>
-          <td><h4>Ausgabenverzicht/Jahr</h4></td><td style="color:#900;text-align:right;"><h4>{{ ausgaben_jahr }} €</h4></td>
+          <td><h4>Ausgabenverzicht/Jahr</h4></td><td style="color:#900;text-align:right;"><h4>{{ ausgaben_jahr|intcomma }} €</h4></td>
         </tr>
     </table>
     
