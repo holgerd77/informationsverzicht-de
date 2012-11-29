@@ -53,6 +53,7 @@ def mitzeichnen(request):
 def freischalten(request):
     
     name = ''
+    twitter_msg = ''
     
     if 'activation_hash' in request.GET:
         unterzeichner = Unterzeichner.objects.filter(activation_hash=request.GET['activation_hash'])
@@ -61,8 +62,14 @@ def freischalten(request):
             u.published = True
             u.save()
             name = u.name
+            twitter_msg  = u"Ich verzichte auf Ausgaben für Zeitungen unterstützender Verlage von "
+            twitter_msg += unicode(u.ausgaben) + u"€ monatl., macht im Jahr "
+            ausgaben_jahr = u.ausgaben * 12
+            twitter_msg += unicode(ausgaben_jahr) + u"€. http://informationsverzicht.de  #lsrboykott"
+            
     c = RequestContext(request, {
         'name': name,
+        'twitter_msg': twitter_msg,
     })
     return render_to_response("if_website/freischalten.html", c)
     
