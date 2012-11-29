@@ -1,0 +1,20 @@
+
+    <table class="table table-striped">
+      <tr>
+        <th>Name</th>
+        <th>Wohnort</th>
+        <th>Bisherige Ausgaben</th>
+        <th>Datum</th>
+      </tr>    
+
+{% for unterzeichner in unterzeichner_list %}
+      <tr>
+        <td>{{ unterzeichner.name }}</td>
+        <td>{{ unterzeichner.wohnort }}</td>
+        <td>{{ unterzeichner.ausgaben }} € / Monat</td>
+        <td>{{ unterzeichner.date_added|date:"d.m.Y H:i:s" }}</td>
+      </tr>
+{% endfor %}
+
+
+</table>

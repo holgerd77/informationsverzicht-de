@@ -1,0 +1,71 @@
+{% extends "if_website/base.html" %}
+
+{% block content %}
+<div class="row">
+  
+  <div class="span8">
+    <div class="hero-unit">
+    <p>
+      <h3>Mit Leistungsschutzrecht? Ohne uns.</h3>
+      Wir mögen Zeitungen. Wir schätzen Journalismus. Aber wir ertragen es auch nicht, dass auf dem
+      Altar des Digitalen Wandels mit einem rückwärtsgewandten Gesetz zur vermeintlichen Rettung
+      des Qualitätsjournalismus Meinungsvielfalt und -freiheit in diesem Land unter die Räder kommen.
+    </p>
+    <p>
+      Wir werden daher <span style="font-weight: bold;">während Inkraftsein eines Leistungsschutzrechtes</span> 
+      auf den <span style="font-weight: bold;">Kauf journalistischer Nachrichtenerzeugnisse</span> verzichten.
+    </p>
+    </div>
+  </div>
+  
+  <div class="span4">
+      
+      <table class="table">
+        <tr>
+          <td><h4>Personen</h4></td><td style="color:#900;text-align:right;"><h4>{{ anz_personen }}</h4></td>
+        </tr>
+        <tr>
+          <td><h4>Ausgabenverzicht/Monat</h4></td><td style="color:#900;text-align:right;"><h4>{{ ausgaben_monat }} €</h4></td>
+        </tr>
+        <tr>
+          <td><h4>Ausgabenverzicht/Jahr</h4></td><td style="color:#900;text-align:right;"><h4>{{ ausgaben_jahr }} €</h4></td>
+        </tr>
+    </table>
+    
+    <p style="text-align:center;">
+      <a href="/mitzeichnen/" class="btn btn-large btn-primary" type="button">Jetzt mitzeichnen</a>
+    </p>
+    
+  </div>
+  
+</div>
+
+<div class="row">
+  <div class="span6">
+  
+  <h4>Weitere Informationen</h4>
+    
+  <p>
+    Über die Auswirkungen des Leistungsschutzrechtes wurde an anderer Stelle schon zur Genüge
+    geschrieben, einige Links zum Einstieg und zum Verfolgen der aktuellen Debatte:
+  </p>
+  
+  <ul>
+    <li><a href="http://de.wikipedia.org/wiki/Leistungsschutzrecht_f%C3%BCr_Presseverleger" target="_blank">Wikipedia</a></li>
+    <li><a href="http://leistungsschutzrecht.info/" target="_blank">Initiative gegen ein Leistungsschutzrecht IGEL</a></li>
+    <li><a href="http://www.google.de/#hl=de&tbo=d&output=search&sclient=psy-ab&q=leistungsschutzrecht&oq=Leistungs&gs_l=hp.3.0.0l4.66.531.0.1931.7.4.0.1.1.1.364.953.0j1j2j1.4.0...0.0...1c.1._Q9q0SA1iz8&pbx=1&bav=on.2,or.r_gc.r_pw.r_qf.&fp=fe5466ce2cd1d143&bpcl=38897761&biw=1439&bih=779" target="_blank">Google Suche</a></li>
+    <li><a href="http://www.google.de/search?hl=de&gl=de&tbm=nws&q=leistungsschutzrecht&oq=Leistung&gs_l=news-cc.3.1.43j0l2j43i400.4925.5911.0.6911.8.5.0.3.3.0.139.378.3j2.5.0...0.0...1ac.1.h6chOLSQyjY" target="_blank">Google News Suche</a></li>
+    <li><a href="https://twitter.com/search?q=%23lsr&src=typd" target="_blank">Twitter - Hashtag &quot;LSR&quot;</a></li>
+  </ul>
+  </div>
+  
+  <div class="span6">
+    <h4>Neue Unterzeichner</h4>
+    {% include "if_website/info_box/unterzeichner.html"%}
+  </div>
+  
+  
+</div>
+
+
+{% endblock %}

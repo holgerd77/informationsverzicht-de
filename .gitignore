@@ -1,0 +1,13 @@
+*.pyc
+*.db
+.DS_Store
+.project
+.pydevproject
+.settings
+*.swp
+*.egg-info
+informationsverzicht_de/settings.py
+/static
+dist
+build
+docs/_build

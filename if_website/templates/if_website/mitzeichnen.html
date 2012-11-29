@@ -1,0 +1,51 @@
+{% extends "if_website/base.html" %}
+
+{% block content %}
+<div class="row">
+  
+  <div class="span4">
+    
+    <div class="well">
+      <h4>Unterzeichnungstext</h4>
+      <p>
+      Ich lehne das von den Verlagen initierte Leistungsschutzrecht ab und halte es für eine Gefahr für die  
+      Meinungsvielfalt und -freiheit in diesem Land.
+      </p>
+      <p>Daher werde ich für die Dauer 
+      eines in Kraft getretenen Leistungsschutzrechtes auf den käuflichen Erwerb 
+      journalistischer Nachrichtenerzeugnisse verzichten.</p>
+      <p>
+        Ich bin damit einverstanden, dass mein Name, mein Wohnort, und die geschätzte Höhe meiner
+        bisherigen monatlichen Ausgaben für Nachrichtenerzeugnisse auf dieser Seite veröffentlicht werden.
+      </p>
+  </div>
+    
+  </div>
+  
+  <div class="span8">
+    <form action="/mitzeichnen/" method="post">
+  <fieldset>    
+    <table class="table">
+      {% for field in form%}
+      <tr>
+        <td><label>{{ field.label }}</label></td>
+        <td>{{ field }} <p>{{ field.help_text }}</p>
+          {% for error in field.errors %}
+            <div class="alert alert-error">{{ error }}</div>
+          {% endfor %}
+        </td>
+      </tr>
+      {% endfor %}
+      {% csrf_token %}
+    </table>
+    <p style="text-align:center;">
+      <button class="btn btn-large btn-primary" type="submit">Jetzt mitzeichnen</button>
+    </p>
+    
+  </fieldset>
+</form> 
+  </div>
+  
+</div>
+
+{% endblock %}

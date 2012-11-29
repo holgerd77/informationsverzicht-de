@@ -1,0 +1,21 @@
+{% extends "if_website/base.html" %}
+
+{% block content %}
+<div class="row">
+  
+  <div class="span3">&nbsp;</div>
+  
+  <div class="span6">
+    {% if name %}
+    <p><h5>Hallo {{ name }}, Deine Mitzeichnung wurde freigeschaltet!</h5></p>
+    <p>Verbreite den Link zu dieser Seite bitte über Facebook, Twitter, Google+ und App.net!</p>
+    {% else %}
+    <p><h5>Die Freischaltung hat leider nicht funktioniert!</h5></p>
+    {% endif %}
+    
+  </div>
+  
+  <div class="span3">&nbsp;</div>
+  
+</div>
+{% endblock %}
