@@ -11,7 +11,7 @@ from if_website.models import Unterzeichner, UnterzeichnerForm
 def index(request):
     anz_personen = Unterzeichner.objects.filter(published=True).count()
     ausgaben_monat = Unterzeichner.objects.filter(published=True).aggregate(Sum('ausgaben'))['ausgaben__sum']
-    if not ausgaben_monat:
+    if ausgaben_monat == None:
         ausgaben_monat = 0
     ausgaben_jahr = 12 * ausgaben_monat
     latest_unterzeichner_list = Unterzeichner.objects.filter(published=True).order_by('-date_added')[0:6]
