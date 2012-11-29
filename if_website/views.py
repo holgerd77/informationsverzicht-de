@@ -37,8 +37,8 @@ def mitzeichnen(request):
             msg += "gegen ein Leistungsschutzrecht ausgesprochen." + "\n\n"
             msg += "Zum Freischalten Deiner Mitzeichnung klicke auf folgenden Link:" +"\n"
             msg += "http://informationsverzicht.de/freischalten/?activation_hash=" + u.activation_hash + "\n\n\n"
-            msg += "Hinweis: Mail wird gerade über privaten Account versendet, "
-            msg += "da es Probleme mit dem Versand über den offiziellen Account gibt."
+            #msg += "Hinweis: Mail wird gerade über privaten Account versendet, "
+            #msg += "da es Probleme mit dem Versand über den offiziellen Account gibt."
             
             send_mail(subject, msg, 'info@informationsverzicht.de', [u.email], fail_silently=False)
             
