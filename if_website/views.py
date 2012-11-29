@@ -27,7 +27,7 @@ def index(request):
 def mitzeichnen(request):
     if request.method == 'POST':
         form = UnterzeichnerForm(request.POST)
-        if form.is_valid() and form.cleaned_data['ausgaben'] <= 120:
+        if form.is_valid() and form.cleaned_data['ausgaben'] <= 80:
             u = form.save(commit=False) 
             u.activation_hash = os.urandom(16).encode('hex')
             u.save()

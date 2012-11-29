@@ -11,7 +11,7 @@ class Unterzeichner(models.Model):
     wohnort = models.CharField(max_length=120)
     help_text = "Geschätzte bisherige monatliche Ausgaben für Nachrichtenerzeugnisse von Verlagen, "
     help_text += "die das Leistungsschutzrecht unterstützen, " 
-    help_text += "nur ganze Zahlen, maximal 120 Euro (zur Vorbeugung von Missbrauch/Ergebnisverzerrung)."
+    help_text += "nur ganze Zahlen, maximal 80 Euro (zur Vorbeugung von Missbrauch/Ergebnisverzerrung)."
     ausgaben = models.IntegerField(help_text=help_text)
     published = models.BooleanField(default=False)
     activation_hash = models.CharField(max_length=250, blank=True)
