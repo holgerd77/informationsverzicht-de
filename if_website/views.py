@@ -40,7 +40,7 @@ def mitzeichnen(request):
             #msg += "Hinweis: Mail wird gerade über privaten Account versendet, "
             #msg += "da es Probleme mit dem Versand über den offiziellen Account gibt."
             
-            send_mail(subject, msg, 'info@informationsverzicht.de', [u.email], fail_silently=False)
+            #send_mail(subject, msg, 'info@informationsverzicht.de', [u.email], fail_silently=False)
             
             return render_to_response('if_website/mitgezeichnet.html')
     else:
