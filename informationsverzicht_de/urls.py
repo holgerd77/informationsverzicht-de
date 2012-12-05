@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
@@ -18,5 +19,6 @@ urlpatterns = patterns('',
     url(r'^freischalten/$', 'if_website.views.freischalten', name='freischalten'),
     url(r'^unterzeichner/$', 'if_website.views.unterzeichner', name='unterzeichner'),
     url(r'^admin/', include(admin.site.urls)),
+    (r'^robots\.txt$', lambda r: HttpResponse("", mimetype="text/plain")),
     url(r'^(?P<page>[-\w]+)/$', 'if_website.views.static_page', name='static_page'),
 )
