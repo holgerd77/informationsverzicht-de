@@ -1,8 +1,9 @@
 # coding=UTF-8
 import os
+from django import template
 from django.core.mail import send_mail
 from django.db.models import Sum
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from if_website.models import Unterzeichner, UnterzeichnerForm
@@ -85,4 +86,9 @@ def unterzeichner(request):
 
 
 def static_page(request, page):
-    return render_to_response('if_website/' + page + '.html')
+    template_name = 'if_website/' + page + '.html'
+    try:
+        template.loader.get_template('if_website/' + page + '.html')
+        return render_to_response(template_name)
+    except template.TemplateDoesNotExist:
+        raise Http404
